@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZMR-qL-mx8">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                            </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nHi-TL-exT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nDO-Jk-UHK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nHi-TL-exT" secondAttribute="trailing" id="A95-GO-AWI"/>
+                            <constraint firstItem="nHi-TL-exT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AE3-Qf-xU0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZMR-qL-mx8" secondAttribute="bottom" id="SS3-Bf-od6"/>
+                            <constraint firstItem="ZMR-qL-mx8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XFV-dB-fJZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZMR-qL-mx8" secondAttribute="trailing" id="ZAe-dH-Nau"/>
+                            <constraint firstItem="nHi-TL-exT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gcZ-4z-QHX"/>
+                            <constraint firstItem="ZMR-qL-mx8" firstAttribute="top" secondItem="nHi-TL-exT" secondAttribute="bottom" id="rq3-KQ-lA0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ZMR-qL-mx8" id="3wB-fj-P1a"/>
+                        <outlet property="textField" destination="nHi-TL-exT" id="go1-d5-67I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
