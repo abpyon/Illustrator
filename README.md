@@ -1,2 +1,2 @@
-# Illustrator
+# Instractor
 講師用
