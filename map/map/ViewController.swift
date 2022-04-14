@@ -21,9 +21,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard let text = textField.text else { return false }
         textField.resignFirstResponder()
       
-        CLGeocoder().geocodeAddressString(text , completionHandler: { (place, err) in
-            if let location = place?.first?.location {
-              let target = location.coordinate
+        CLGeocoder().geocodeAddressString(text) { place, err in
+            if let target = place?.first?.location.coordinate {
+
               let pin = MKPointAnnotation()
               pin.coordinate = target
               pin.title = text
@@ -33,15 +33,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                                        latitudinalMeters: 500.0,
                                                        longitudinalMeters: 500.0)
               
-              let loc = CLLocation(latitude: 35.6776117, longitude: 139.7651235)
-              let dist = loc.distance(from: CLLocation(latitude: target.latitude,
-                                                       longitude: target.longitude))
+              let aloc = CLLocation(latitude: 35.6776117, longitude: 139.7651235)
+              let bloc = CLLocation(latitude: target.latitude, longitude: target.longitude)
+              let dist = aloc.distance(from: bloc)
 
               let alert = UIAlertController(title: "", message: "\(text)と東京駅との距離\(dist)m", preferredStyle: .alert)
               alert.addAction(UIAlertAction(title: "OK", style: .default))
               self.present(alert, animated: true)
             }
-        })
+        }
       return true
    }
 }
